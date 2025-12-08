@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  # Next.js application - Development mode with hot reloading
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: return-hub-app
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount source code for hot reloading
+      - ./src:/app/src
+      - ./app:/app/app
+      - ./public:/app/public
+      - ./package.json:/app/package.json
+      - ./tsconfig.json:/app/tsconfig.json
+      - ./next.config.ts:/app/next.config.ts
+      - ./tailwind.config.ts:/app/tailwind.config.ts
+      - ./.env.local:/app/.env.local
+      # Prevent node_modules from being overwritten
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    networks:
+      - return-hub-network
+    restart: unless-stopped
+
+networks:
+  return-hub-network:
+    driver: bridge
