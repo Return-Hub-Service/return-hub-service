@@ -1,7 +1,27 @@
-import supabase from "@/lib/supabase";
+"use client";
 
-export default async function Home() {
-  const { data: users, error } = await supabase.from("user").select("*");
+import supabase from "@/lib/supabase";
+import { useEffect, useState } from "react";
+
+export default function Home() {
+  const [users, setUsers] = useState<Record<string, unknown>[]>([]);
+  const [error, setError] = useState<Error | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchUsers() {
+      if (!supabase) {
+        setError(new Error("Supabase client not initialized"));
+        setLoading(false);
+        return;
+      }
+      const { data, error } = await supabase.from("user").select("*");
+      if (error) setError(error);
+      if (data) setUsers(data);
+      setLoading(false);
+    }
+    fetchUsers();
+  }, []);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -11,17 +31,21 @@ export default async function Home() {
             Supabase Users Test
           </h1>
 
+          {loading && (
+            <p className="text-zinc-600 dark:text-zinc-400">Loading...</p>
+          )}
+
           {error && (
             <div className="p-4 mb-4 bg-red-100 border border-red-400 text-red-700 rounded">
               Error: {error.message}
             </div>
           )}
 
-          {users && users.length > 0 ? (
+          {!loading && users && users.length > 0 ? (
             <div className="space-y-4">
-              {users.map((user) => (
+              {users.map((user, index) => (
                 <div
-                  key={user.user_id}
+                  key={user.user_id as string || index}
                   className="p-4 border border-zinc-200 dark:border-zinc-800 rounded-lg"
                 >
                   <pre className="text-sm text-zinc-800 dark:text-zinc-200 overflow-auto">
