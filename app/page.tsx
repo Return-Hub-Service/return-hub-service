@@ -10,6 +10,11 @@ export default function Home() {
 
   useEffect(() => {
     async function fetchUsers() {
+      if (!supabase) {
+        setError(new Error("Supabase client not initialized"));
+        setLoading(false);
+        return;
+      }
       const { data, error } = await supabase.from("user").select("*");
       if (error) setError(error);
       if (data) setUsers(data);
