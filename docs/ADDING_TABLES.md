@@ -161,7 +161,7 @@ Now you can use your fully-typed table:
 
 ```typescript
 import { Product, ProductInsert, ProductUpdate } from "@/src/interfaces";
-import supabase from "@/lib/supabase";
+import supabase from "@/src/lib/supabase";
 
 // ✅ Query - fully typed response
 const [products, setProducts] = useState<Product[]>([]);

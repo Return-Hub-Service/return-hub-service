@@ -12,7 +12,6 @@ services:
     volumes:
       # Mount source code for hot reloading
       - ./src:/app/src
-      - ./app:/app/app
       - ./public:/app/public
       - ./package.json:/app/package.json
       - ./tsconfig.json:/app/tsconfig.json
