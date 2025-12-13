@@ -153,7 +153,7 @@ Browser auto-refreshes
 The project uses local Supabase by default:
 
 ```bash
-# .env.local (already configured)
+# .env (already configured)
 NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 ```
@@ -264,7 +264,7 @@ return-hub-service/
 ├── docker-compose.yml     # Next.js container config
 ├── Dockerfile             # Production build
 ├── Dockerfile.dev         # Development build
-├── .env.local            # Local environment vars
+├── .env                  # Environment variables
 └── package.json          # npm scripts
 ```
 
