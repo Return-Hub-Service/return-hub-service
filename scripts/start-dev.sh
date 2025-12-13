@@ -10,6 +10,15 @@ if ! docker info > /dev/null 2>&1; then
     exit 1
 fi
 
+# Check if port 3000 is already in use
+echo "🔍 Checking if port 3000 is available..."
+if lsof -Pi :3000 -sTCP:LISTEN -t > /dev/null 2>&1; then
+    echo "❌ Port 3000 is already in use. Please stop the process using port 3000 and try again."
+    echo "   You can find what's using the port with: lsof -i :3000 or docker ps"
+    exit 1
+fi
+echo "✅ Port 3000 is available"
+
 # Check if Supabase is already running
 echo "🔍 Checking Supabase status..."
 if npx supabase status > /dev/null 2>&1; then
