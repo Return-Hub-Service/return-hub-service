@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReturnRun - Schedule a Return</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a class="logo" href="home.html">
+                <div class="logo-icon">📦</div>
+                ReturnRun
+            </a>
+            <div class="nav-links">
+                <a class="nav-link" href="request.html">Return</a>
+                <a class="nav-link" href="driver-status.html">Earn</a>
+                <a class="nav-link" href="help.html">About</a>
+                <a class="nav-link" href="help.html">Help</a>
+            </div>
+            <div class="nav-right">
+                <div class="nav-auth-buttons">
+                    <a class="btn btn-ghost" href="login.html">Log in</a>
+                    <a class="btn btn-white" href="register.html">Sign up</a>
+                </div>
+                <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a class="mobile-menu-link" href="request.html">Return</a>
+        <a class="mobile-menu-link" href="driver-status.html">Earn</a>
+        <a class="mobile-menu-link" href="help.html">About</a>
+        <a class="mobile-menu-link" href="help.html">Help</a>
+        <div class="mobile-auth">
+            <a class="btn btn-outline btn-lg" style="flex: 1" href="login.html">Log in</a>
+            <a class="btn btn-primary btn-lg" style="flex: 1" href="register.html">Sign up</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="request-container animate-fade">
+            <div class="page-header">
+                <h1 class="page-title">Schedule a Return Pickup</h1>
+                <p class="page-subtitle">We'll pick up your packages and deliver them to the carrier</p>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="form-card">
+                <h2 class="form-section-title">
+                    <span class="section-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </span>
+                    Contact Information
+                </h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Full Name <span class="required">*</span></label>
+                        <input type="text" class="form-input" placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone Number <span class="required">*</span></label>
+                        <input type="tel" class="form-input" placeholder="(555) 123-4567">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email Address <span class="required">*</span></label>
+                    <input type="email" class="form-input" placeholder="you@example.com">
+                </div>
+            </div>
+
+            <!-- Pickup Address -->
+            <div class="form-card">
+                <h2 class="form-section-title">
+                    <span class="section-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    Pickup Address
+                </h2>
+                <div class="form-group">
+                    <label class="form-label">Street Address <span class="required">*</span></label>
+                    <input type="text" class="form-input" placeholder="123 Main Street">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Apt/Suite/Unit</label>
+                        <input type="text" class="form-input" placeholder="Apt 4B">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">City <span class="required">*</span></label>
+                        <input type="text" class="form-input" placeholder="Hendersonville">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">State <span class="required">*</span></label>
+                        <select class="select-input">
+                            <option value="">Select state</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="GA">Georgia</option>
+                            <option value="VA">Virginia</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">ZIP Code <span class="required">*</span></label>
+                        <input type="text" class="form-input" placeholder="28792">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Information -->
+            <div class="form-card">
+                <h2 class="form-section-title">
+                    <span class="section-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                    </span>
+                    Package Information
+                </h2>
+
+                <!-- Package Entry 1 -->
+                <div class="package-entry" id="package1">
+                    <div class="package-entry-header">
+                        <span class="package-number">Package 1</span>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Carrier <span class="required">*</span></label>
+                            <select class="select-input">
+                                <option value="">Select carrier</option>
+                                <option value="amazon">Amazon</option>
+                                <option value="ups">UPS</option>
+                                <option value="fedex">FedEx</option>
+                                <option value="usps">USPS</option>
+                                <option value="dhl">DHL</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tracking Number</label>
+                            <input type="text" class="form-input" placeholder="1Z999AA10123456784">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Estimated Size <span class="required">*</span></label>
+                            <select class="select-input">
+                                <option value="">Select size</option>
+                                <option value="small">Small (fits in mailbox)</option>
+                                <option value="medium">Medium (shoebox)</option>
+                                <option value="large">Large (moving box)</option>
+                                <option value="xlarge">Extra Large (furniture)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Estimated Weight <span class="required">*</span></label>
+                            <select class="select-input">
+                                <option value="">Select weight</option>
+                                <option value="light">Light (under 5 lbs)</option>
+                                <option value="medium">Medium (5-20 lbs)</option>
+                                <option value="heavy">Heavy (20-50 lbs)</option>
+                                <option value="very-heavy">Very Heavy (50+ lbs)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Package Images</label>
+                        <div class="file-upload-area">
+                            <div class="upload-icon">📷</div>
+                            <p class="upload-text"><span class="upload-link">Click to upload</span> or drag and drop</p>
+                            <p class="upload-text" style="font-size: 12px; margin-top: 4px;">PNG, JPG up to 10MB</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Return QR Code</label>
+                        <div class="file-upload-area">
+                            <div class="upload-icon">📱</div>
+                            <p class="upload-text"><span class="upload-link">Upload QR code</span> if available</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Entry 2 (can be duplicated) -->
+                <div class="package-entry" id="package2">
+                    <div class="package-entry-header">
+                        <span class="package-number">Package 2</span>
+                        <button class="remove-package" onclick="removePackage('package2')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                        </button>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Carrier <span class="required">*</span></label>
+                            <select class="select-input">
+                                <option value="">Select carrier</option>
+                                <option value="amazon">Amazon</option>
+                                <option value="ups">UPS</option>
+                                <option value="fedex">FedEx</option>
+                                <option value="usps">USPS</option>
+                                <option value="dhl">DHL</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tracking Number</label>
+                            <input type="text" class="form-input" placeholder="1Z999AA10123456784">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Estimated Size <span class="required">*</span></label>
+                            <select class="select-input">
+                                <option value="">Select size</option>
+                                <option value="small">Small (fits in mailbox)</option>
+                                <option value="medium">Medium (shoebox)</option>
+                                <option value="large">Large (moving box)</option>
+                                <option value="xlarge">Extra Large (furniture)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Estimated Weight <span class="required">*</span></label>
+                            <select class="select-input">
+                                <option value="">Select weight</option>
+                                <option value="light">Light (under 5 lbs)</option>
+                                <option value="medium">Medium (5-20 lbs)</option>
+                                <option value="heavy">Heavy (20-50 lbs)</option>
+                                <option value="very-heavy">Very Heavy (50+ lbs)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Package Images</label>
+                        <div class="file-upload-area">
+                            <div class="upload-icon">📷</div>
+                            <p class="upload-text"><span class="upload-link">Click to upload</span> or drag and drop</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Return QR Code</label>
+                        <div class="file-upload-area">
+                            <div class="upload-icon">📱</div>
+                            <p class="upload-text"><span class="upload-link">Upload QR code</span> if available</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="add-package-btn" onclick="addPackage()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                    Add Another Package
+                </button>
+            </div>
+
+            <!-- Pickup Preferences -->
+            <div class="form-card">
+                <h2 class="form-section-title">
+                    <span class="section-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </span>
+                    Pickup Preferences
+                </h2>
+
+                <div class="form-group">
+                    <label class="form-label">Preferred Date <span class="required">*</span></label>
+                    <div class="date-picker">
+                        <div class="date-option unavailable">
+                            <div class="date-day">Today</div>
+                            <div class="date-date">12/12</div>
+                            <div style="font-size: 10px; margin-top: 4px;">Full</div>
+                        </div>
+                        <div class="date-option selected">
+                            <div class="date-day">Sat</div>
+                            <div class="date-date">12/13</div>
+                        </div>
+                        <div class="date-option">
+                            <div class="date-day">Sun</div>
+                            <div class="date-date">12/14</div>
+                        </div>
+                        <div class="date-option">
+                            <div class="date-day">Mon</div>
+                            <div class="date-date">12/15</div>
+                        </div>
+                        <div class="date-option">
+                            <div class="date-day">Tue</div>
+                            <div class="date-date">12/16</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Time Window <span class="required">*</span></label>
+                    <div class="time-slots">
+                        <div class="time-slot">8:00 AM - 10:00 AM</div>
+                        <div class="time-slot selected">10:00 AM - 12:00 PM</div>
+                        <div class="time-slot">12:00 PM - 2:00 PM</div>
+                        <div class="time-slot">2:00 PM - 4:00 PM</div>
+                        <div class="time-slot">4:00 PM - 6:00 PM</div>
+                        <div class="time-slot">6:00 PM - 8:00 PM</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Package Location <span class="required">*</span></label>
+                    <select class="select-input">
+                        <option value="">Where will packages be?</option>
+                        <option value="front-door">Front door</option>
+                        <option value="back-door">Back door</option>
+                        <option value="porch">Porch</option>
+                        <option value="garage">Garage</option>
+                        <option value="mailroom">Mailroom/lobby</option>
+                        <option value="other">Other (specify in notes)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Additional Notes</label>
+                    <textarea class="textarea-input" placeholder="Any special instructions for the driver (e.g., gate code, doorbell doesn't work, etc.)"></textarea>
+                </div>
+            </div>
+
+            <button class="btn btn-primary btn-lg btn-full" onclick="window.location.href='orders.html'">
+                Submit Return Request
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+        </div>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+            document.querySelector('.hamburger').classList.toggle('open');
+        }
+
+        function removePackage(id) {
+            document.getElementById(id).remove();
+        }
+
+        let packageCount = 2;
+        function addPackage() {
+            packageCount++;
+            // In production, you would clone the package entry template
+            alert('Package ' + packageCount + ' would be added here');
+        }
+
+        // Date selection
+        document.querySelectorAll('.date-option:not(.unavailable)').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.date-option').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // Time slot selection
+        document.querySelectorAll('.time-slot').forEach(slot => {
+            slot.addEventListener('click', function() {
+                document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+    </script>
+</body>
+</html>

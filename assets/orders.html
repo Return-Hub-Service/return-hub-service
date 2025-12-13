@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReturnRun - My Returns</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation (Logged In State) -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a class="logo" href="home.html">
+                <div class="logo-icon">📦</div>
+                ReturnRun
+            </a>
+            <div class="nav-links">
+                <a class="nav-link" href="request.html">Return</a>
+                <a class="nav-link" href="driver-status.html">Earn</a>
+                <a class="nav-link" href="help.html">About</a>
+                <a class="nav-link" href="help.html">Help</a>
+            </div>
+            <div class="nav-right">
+                <div class="user-dropdown">
+                    <div class="user-btn">Jonathan <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+                    <div class="user-dropdown-menu">
+                        <a class="dropdown-item" href="orders.html">My Orders</a>
+                        <a class="dropdown-item" href="request.html">New Return</a>
+                        <a class="dropdown-item" href="home.html">Sign Out</a>
+                    </div>
+                </div>
+                <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Secondary Navigation -->
+    <div class="secondary-nav">
+        <div class="secondary-nav-inner">
+            <div class="welcome-text">Welcome back, Jonathan</div>
+            <div class="secondary-links">
+                <a class="secondary-link" href="orders.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Activity</a>
+                <a class="secondary-link" href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg> Promotions</a>
+                <a class="secondary-link" href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Account</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a class="mobile-menu-link" href="request.html">Return</a>
+        <a class="mobile-menu-link" href="driver-status.html">Earn</a>
+        <a class="mobile-menu-link" href="help.html">About</a>
+        <a class="mobile-menu-link" href="orders.html">My Orders</a>
+        <a class="mobile-menu-link" href="home.html">Sign Out</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content" style="padding-top: 0;">
+        <div class="page-container animate-fade">
+            <div class="page-header">
+                <h1 class="page-title">My Returns</h1>
+                <p class="page-subtitle">Track and manage your package return pickups</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab active" onclick="showTab('current')" id="tabCurrent">Current</button>
+                <button class="tab" onclick="showTab('pending')" id="tabPending">Scheduled</button>
+                <button class="tab" onclick="showTab('past')" id="tabPast">Completed</button>
+            </div>
+
+            <!-- Current Orders -->
+            <div class="orders-list" id="currentOrders">
+                <div class="order-card">
+                    <div class="order-header">
+                        <div>
+                            <div class="order-id">RR-2025-001</div>
+                            <div class="order-date">Dec 12, 2025</div>
+                        </div>
+                        <span class="status-badge status-in-progress">In Progress</span>
+                    </div>
+                    <div class="order-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Packages</span>
+                            <span class="detail-value packages-count"><span class="package-icon-small">📦</span> 2 packages</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Pickup Address</span>
+                            <span class="detail-value">123 Main St</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Time Window</span>
+                            <span class="detail-value">2:00 PM - 4:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pending/Scheduled Orders -->
+            <div class="orders-list" id="pendingOrders" style="display: none;">
+                <div class="order-card">
+                    <div class="order-header">
+                        <div>
+                            <div class="order-id">RR-2025-002</div>
+                            <div class="order-date">Dec 13, 2025</div>
+                        </div>
+                        <span class="status-badge status-pending">Pending</span>
+                    </div>
+                    <div class="order-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Packages</span>
+                            <span class="detail-value packages-count"><span class="package-icon-small">📦</span> 1 package</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Pickup Address</span>
+                            <span class="detail-value">456 Oak Ave</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Time Window</span>
+                            <span class="detail-value">10:00 AM - 12:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-card">
+                    <div class="order-header">
+                        <div>
+                            <div class="order-id">RR-2025-003</div>
+                            <div class="order-date">Dec 14, 2025</div>
+                        </div>
+                        <span class="status-badge status-confirmed">Confirmed</span>
+                    </div>
+                    <div class="order-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Packages</span>
+                            <span class="detail-value packages-count"><span class="package-icon-small">📦</span> 3 packages</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Pickup Address</span>
+                            <span class="detail-value">789 Pine Rd</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Time Window</span>
+                            <span class="detail-value">4:00 PM - 6:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Past/Completed Orders -->
+            <div class="orders-list" id="pastOrders" style="display: none;">
+                <div class="order-card">
+                    <div class="order-header">
+                        <div>
+                            <div class="order-id">RR-2025-000</div>
+                            <div class="order-date">Dec 10, 2025</div>
+                        </div>
+                        <span class="status-badge status-delivered">Delivered</span>
+                    </div>
+                    <div class="order-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Packages</span>
+                            <span class="detail-value packages-count"><span class="package-icon-small">📦</span> 2 packages</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Pickup Address</span>
+                            <span class="detail-value">321 Elm St</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Time Window</span>
+                            <span class="detail-value">1:00 PM - 3:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Return Button -->
+            <div style="margin-top: 32px; text-align: center;">
+                <a class="btn btn-primary btn-lg" href="request.html">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                    New Return Request
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+            document.querySelector('.hamburger').classList.toggle('open');
+        }
+
+        function showTab(tab) {
+            document.getElementById('currentOrders').style.display = 'none';
+            document.getElementById('pendingOrders').style.display = 'none';
+            document.getElementById('pastOrders').style.display = 'none';
+            document.getElementById('tabCurrent').classList.remove('active');
+            document.getElementById('tabPending').classList.remove('active');
+            document.getElementById('tabPast').classList.remove('active');
+
+            if (tab === 'current') {
+                document.getElementById('currentOrders').style.display = 'flex';
+                document.getElementById('tabCurrent').classList.add('active');
+            } else if (tab === 'pending') {
+                document.getElementById('pendingOrders').style.display = 'flex';
+                document.getElementById('tabPending').classList.add('active');
+            } else if (tab === 'past') {
+                document.getElementById('pastOrders').style.display = 'flex';
+                document.getElementById('tabPast').classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
