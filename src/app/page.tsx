@@ -1,10 +1,11 @@
 "use client";
 
-import supabase from "@/lib/supabase";
+import supabase from "@/src/lib/supabase";
+import { User } from "@/src/interfaces/User/User";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [users, setUsers] = useState<Record<string, unknown>[]>([]);
+  const [users, setUsers] = useState<User[]>([]);
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -45,7 +46,7 @@ export default function Home() {
             <div className="space-y-4">
               {users.map((user, index) => (
                 <div
-                  key={user.user_id as string || index}
+                  key={user.user_id || index}
                   className="p-4 border border-zinc-200 dark:border-zinc-800 rounded-lg"
                 >
                   <pre className="text-sm text-zinc-800 dark:text-zinc-200 overflow-auto">
