@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReturnRun - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a class="logo" href="home.html">
+                <div class="logo-icon">📦</div>
+                ReturnRun
+            </a>
+            
+            <div class="nav-links">
+                <a class="nav-link" href="request.html">Return</a>
+                <a class="nav-link" href="driver-status.html">Earn</a>
+                <a class="nav-link" href="help.html">About</a>
+                <a class="nav-link" href="help.html">Help</a>
+            </div>
+            
+            <div class="nav-right">
+                <div class="nav-auth-buttons">
+                    <a class="btn btn-ghost" href="login.html">Log in</a>
+                    <a class="btn btn-white" href="register.html">Sign up</a>
+                </div>
+                
+                <div class="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a class="mobile-menu-link" href="request.html">Return</a>
+        <a class="mobile-menu-link" href="driver-status.html">Earn</a>
+        <a class="mobile-menu-link" href="help.html">About</a>
+        <a class="mobile-menu-link" href="help.html">Help</a>
+        <div class="mobile-auth">
+            <a class="btn btn-outline btn-lg" style="flex: 1" href="login.html">Log in</a>
+            <a class="btn btn-primary btn-lg" style="flex: 1" href="register.html">Sign up</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-pattern"></div>
+            
+            <div class="hero-content animate-slide-up">
+                <div class="hero-card">
+                    <h1 class="hero-title">Where should we pick up your return?</h1>
+                    <p class="hero-subtitle">We'll pick up your packages and drop them off at the carrier for you.</p>
+                    
+                    <div class="address-input-wrapper">
+                        <span class="address-input-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </span>
+                        <input type="text" class="address-input" placeholder="Enter your address" id="addressInput">
+                        
+                        <!-- Address Suggestions (shown when typing) -->
+                        <div class="address-suggestions" id="suggestions" style="display: none;">
+                            <div class="suggestion-item" onclick="selectAddress('123 Main Street')">
+                                <span class="suggestion-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                        <circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                </span>
+                                <div class="suggestion-text">
+                                    <div class="suggestion-main">123 Main Street</div>
+                                    <div class="suggestion-sub">Hendersonville, NC 28792</div>
+                                </div>
+                            </div>
+                            <div class="suggestion-item" onclick="selectAddress('456 Oak Avenue')">
+                                <span class="suggestion-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                        <circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                </span>
+                                <div class="suggestion-text">
+                                    <div class="suggestion-main">456 Oak Avenue</div>
+                                    <div class="suggestion-sub">Asheville, NC 28801</div>
+                                </div>
+                            </div>
+                            <div class="suggestion-item" onclick="selectAddress('789 Pine Road')">
+                                <span class="suggestion-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                        <circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                </span>
+                                <div class="suggestion-text">
+                                    <div class="suggestion-main">789 Pine Road</div>
+                                    <div class="suggestion-sub">Fletcher, NC 28732</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="btn btn-primary btn-lg btn-full" href="request.html">
+                        Continue
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+            document.querySelector('.hamburger').classList.toggle('open');
+        }
+
+        const addressInput = document.getElementById('addressInput');
+        const suggestions = document.getElementById('suggestions');
+
+        addressInput.addEventListener('focus', () => {
+            if (addressInput.value.length > 0) {
+                suggestions.style.display = 'block';
+            }
+        });
+
+        addressInput.addEventListener('input', () => {
+            suggestions.style.display = addressInput.value.length > 0 ? 'block' : 'none';
+        });
+
+        addressInput.addEventListener('blur', () => {
+            setTimeout(() => { suggestions.style.display = 'none'; }, 200);
+        });
+
+        function selectAddress(address) {
+            addressInput.value = address;
+            suggestions.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
