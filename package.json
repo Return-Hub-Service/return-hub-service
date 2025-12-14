@@ -20,7 +20,12 @@
     "supabase:generate-types": "supabase gen types typescript --local > supabase/types.ts",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
-    "docker:logs": "docker-compose logs -f"
+    "docker:stop": "docker-compose stop",
+    "docker:restart": "docker-compose restart",
+    "docker:restart:app": "docker-compose restart app",
+    "docker:rebuild": "docker-compose down && docker-compose build --no-cache && docker-compose up -d",
+    "docker:logs": "docker-compose logs -f",
+    "docker:logs:app": "docker-compose logs -f app"
   },
   "dependencies": {
     "@mantine/core": "^8.3.10",
