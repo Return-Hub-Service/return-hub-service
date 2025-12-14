@@ -15,6 +15,7 @@ services:
       - ./tsconfig.json:/app/tsconfig.json
       - ./next.config.ts:/app/next.config.ts
       - ./tailwind.config.ts:/app/tailwind.config.ts
+      - ./postcss.config.cjs:/app/postcss.config.cjs
       - ./.env:/app/.env
       # Prevent node_modules from being overwritten
       - /app/node_modules
