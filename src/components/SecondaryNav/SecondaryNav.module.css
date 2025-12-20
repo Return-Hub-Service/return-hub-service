@@ -1,0 +1,62 @@
+@import '../../styles/variables.css';
+
+.secondaryNav {
+  background: white;
+  border-bottom: 1px solid var(--gray-200);
+  padding: 16px 0;
+}
+
+.secondaryNavInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcomeText {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.secondaryLinks {
+  display: flex;
+  gap: 24px;
+}
+
+.secondaryLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.secondaryLink:hover {
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .secondaryNavInner {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .secondaryLinks {
+    gap: 16px;
+  }
+
+  .welcomeText {
+    font-size: 14px;
+  }
+
+  .secondaryLink {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,159 @@
+@import '../../../styles/variables.css';
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--secondary);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.mobileMenuHeader {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.closeButton {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mobileMenuContent {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobileMenuLink {
+  padding: 16px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: var(--radius);
+  transition: background 0.2s;
+}
+
+.mobileMenuLink:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mobileUserSection {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobileUserInfo {
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.mobileUserName {
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.mobileUserEmail {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.mobileSignOut {
+  width: 100%;
+  padding: 16px 20px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+
+.mobileSignOut:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.mobileAuth {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.btn {
+  flex: 1;
+  padding: 14px 24px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  text-align: center;
+}
+
+.btnOutline {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btnOutline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btnPrimary {
+  background: var(--primary);
+  color: white;
+}
+
+.btnPrimary:hover {
+  background: var(--primary-dark);
+}
+
+.btnLg {
+  padding: 14px 24px;
+  font-size: 16px;
+}

@@ -1,3 +1,5 @@
-export default function ResetPassword() {
-  return <div>Reset Password Page</div>;
+import ResetPasswordView from '@/src/views/ResetPassword';
+
+export default function ResetPasswordPage() {
+  return <ResetPasswordView />;
 }

@@ -1,3 +1,5 @@
-export default function Help() {
-  return <div>Help Page</div>;
+import HelpView from "@/src/views/Help";
+
+export default function HelpPage() {
+  return <HelpView />;
 }

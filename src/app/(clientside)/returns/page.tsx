@@ -1,3 +1,5 @@
-export default function MyReturns() {
-  return <div>My Returns Page</div>;
+import ReturnsView from '@/src/views/Returns';
+
+export default function ReturnsPage() {
+  return <ReturnsView />;
 }

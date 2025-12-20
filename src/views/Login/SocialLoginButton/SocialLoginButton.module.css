@@ -1,0 +1,28 @@
+@import '../../../styles/variables.css';
+
+.googleButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: white;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.googleButton:hover {
+  background: var(--bg-secondary);
+  border-color: var(--text-secondary);
+}
+
+.googleIcon {
+  flex-shrink: 0;
+}

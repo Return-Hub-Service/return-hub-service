@@ -1,0 +1,52 @@
+@import '../../../styles/variables.css';
+
+.authHeader {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.authTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
+.authSubtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.authSubtitle strong {
+  color: var(--text-primary);
+}
+
+.resendText {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 16px 0 24px 0;
+}
+
+.authLink {
+  color: var(--primary);
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.authLink:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}

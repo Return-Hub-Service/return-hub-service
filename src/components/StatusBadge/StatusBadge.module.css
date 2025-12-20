@@ -1,0 +1,35 @@
+@import '../../styles/variables.css';
+
+.statusBadge {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.inProgress {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.confirmed {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.delivered {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.cancelled {
+  background-color: #fee2e2;
+  color: #991b1b;
+}

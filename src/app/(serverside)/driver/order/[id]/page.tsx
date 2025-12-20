@@ -1,8 +1,11 @@
-export default async function DriverOrder({
+import DriverStatusView from '@/src/views/DriverStatus';
+
+export default async function DriverOrderPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  return <div>Driver Order {id}</div>;
+  // In a real app, would fetch order data based on id
+  return <DriverStatusView />;
 }

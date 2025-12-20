@@ -1,0 +1,108 @@
+@import '../../styles/variables.css';
+
+.formGroup {
+  margin-bottom: 24px;
+}
+
+.formLabel {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.required {
+  color: var(--primary);
+}
+
+.datePicker {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.dateOption {
+  flex-shrink: 0;
+  width: 80px;
+  padding: 16px 12px;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: white;
+}
+
+.dateOption:hover:not(.unavailable) {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.dateOption.selected {
+  border-color: var(--primary);
+  background-color: var(--primary);
+  color: white;
+}
+
+.dateOption.unavailable {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--gray-100);
+}
+
+.dateDay {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.dateDate {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.unavailableText {
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+.timeSlots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.timeSlot {
+  padding: 12px 16px;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: white;
+}
+
+.timeSlot:hover {
+  border-color: var(--primary);
+}
+
+.timeSlot.selected {
+  border-color: var(--primary);
+  background-color: var(--primary);
+  color: white;
+}
+
+@media (max-width: 640px) {
+  .dateOption {
+    width: 70px;
+    padding: 12px 8px;
+  }
+
+  .timeSlots {
+    grid-template-columns: 1fr;
+  }
+}

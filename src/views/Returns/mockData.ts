@@ -1,0 +1,58 @@
+import { Order } from '@/src/interfaces/Returns';
+
+export const mockOrders: Order[] = [
+  {
+    id: '1',
+    orderId: 'RR-2025-001',
+    date: 'Dec 12, 2025',
+    status: 'in-progress',
+    packageCount: 2,
+    pickupAddress: '123 Main St',
+    timeWindow: '2:00 PM - 4:00 PM',
+  },
+  {
+    id: '2',
+    orderId: 'RR-2025-002',
+    date: 'Dec 13, 2025',
+    status: 'pending',
+    packageCount: 1,
+    pickupAddress: '456 Oak Ave',
+    timeWindow: '10:00 AM - 12:00 PM',
+  },
+  {
+    id: '3',
+    orderId: 'RR-2025-003',
+    date: 'Dec 14, 2025',
+    status: 'confirmed',
+    packageCount: 3,
+    pickupAddress: '789 Pine Rd',
+    timeWindow: '4:00 PM - 6:00 PM',
+  },
+  {
+    id: '4',
+    orderId: 'RR-2025-004',
+    date: 'Dec 15, 2025',
+    status: 'confirmed',
+    packageCount: 1,
+    pickupAddress: '321 Maple Dr',
+    timeWindow: '8:00 AM - 10:00 AM',
+  },
+  {
+    id: '5',
+    orderId: 'RR-2025-000',
+    date: 'Dec 10, 2025',
+    status: 'delivered',
+    packageCount: 2,
+    pickupAddress: '321 Elm St',
+    timeWindow: '1:00 PM - 3:00 PM',
+  },
+  {
+    id: '6',
+    orderId: 'RR-2024-999',
+    date: 'Dec 8, 2025',
+    status: 'delivered',
+    packageCount: 1,
+    pickupAddress: '654 Cedar Ln',
+    timeWindow: '3:00 PM - 5:00 PM',
+  },
+];

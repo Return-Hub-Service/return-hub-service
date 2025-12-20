@@ -1,0 +1,45 @@
+@import '../../styles/variables.css';
+
+.formCard {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 24px;
+}
+
+.formSectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 24px 0;
+}
+
+.sectionIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary) 0%, #ff8f66 100%);
+  color: white;
+}
+
+@media (max-width: 640px) {
+  .formCard {
+    padding: 24px 20px;
+  }
+
+  .formSectionTitle {
+    font-size: 18px;
+  }
+
+  .sectionIcon {
+    width: 36px;
+    height: 36px;
+  }
+}

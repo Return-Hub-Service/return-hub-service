@@ -1,3 +1,5 @@
-export default function Register() {
-  return <div>Register Page</div>;
+import RegisterView from '@/src/views/Register';
+
+export default function RegisterPage() {
+  return <RegisterView />;
 }

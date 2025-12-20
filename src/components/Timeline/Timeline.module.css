@@ -1,0 +1,94 @@
+@import '../../styles/variables.css';
+
+.timelineContainer {
+  position: relative;
+  margin: 32px 0;
+}
+
+.timelineLine {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--gray-200);
+  border-radius: 2px;
+}
+
+.timelineProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary) 0%, #ff8f66 100%);
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.statusTimeline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.timelineStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.timelineDot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  border: 3px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  margin-bottom: 8px;
+}
+
+.timelineDot.active {
+  background: linear-gradient(135deg, var(--primary) 0%, #ff8f66 100%);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+}
+
+.timelineDot.completed {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.timelineLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.timelineLabel.active {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .timelineDot {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .timelineLabel {
+    font-size: 11px;
+  }
+}
